@@ -12,9 +12,9 @@ public class HomePage {
 		return element;
 	}
 	
-public static WebElement Date(WebDriver driver) {
+public static WebElement DOJ(WebDriver driver) {
 		
-		WebElement element = driver.findElement(By.id("ctl00_mainContent_ddl_destinationStation1_CTXTaction"));
+		WebElement element = driver.findElement(By.xpath("//input[@id='ctl00_mainContent_view_date1']"));
 		return element;
 	}
 	

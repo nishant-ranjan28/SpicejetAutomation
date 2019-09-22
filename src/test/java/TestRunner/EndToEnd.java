@@ -2,7 +2,6 @@ package TestRunner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import TestCases.HomePage;
@@ -46,6 +45,12 @@ public class EndToEnd {
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("(//a[@value='GOI'])[2]")).click();
 		System.out.println("Arrival Selected");
+	}
+	
+	public static void DateOfJourney() throws InterruptedException{
+		HomePage.DOJ(driver).click();
+		
+		//Select Depart Date
 		
 	}
 
