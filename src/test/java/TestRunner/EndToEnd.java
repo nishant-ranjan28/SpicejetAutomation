@@ -3,6 +3,8 @@ package TestRunner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import TestCases.HomePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -16,6 +18,10 @@ public class EndToEnd {
 	public static void main(String[] args) throws InterruptedException {
 		browserURL();
 		DepartureArrival();
+		DateOfJourney();
+		Search();
+		continueToBook();
+		AddCustomers();
 		
 	}
 	
@@ -48,10 +54,27 @@ public class EndToEnd {
 	}
 	
 	public static void DateOfJourney() throws InterruptedException{
-		HomePage.DOJ(driver).click();
 		
 		//Select Depart Date
-		
+		new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.xpath
+				("//table[@class='ui-datepicker-calendar']//tr//a[contains(@class,'ui-state-default') and contains(.,'31')]"))).click();
+		System.out.println("Date of journey selected");
 	}
-
+	
+	public static void Search() throws InterruptedException{
+		Thread.sleep(5000);
+		HomePage.SearchFlight(driver).click();
+		System.out.println("search flight button clicked");
+	}
+	
+	public static void continueToBook() throws InterruptedException{
+		Thread.sleep(5000);
+		HomePage.ContinueToCustomer(driver).click();
+		System.out.println("continue to add customer details");
+	}
+	
+	public static void AddCustomers() throws InterruptedException{
+		Thread.sleep(5000);
+		HomePage.Title(driver).click();
+	}
 }
