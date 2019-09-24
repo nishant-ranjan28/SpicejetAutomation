@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import TestCases.HomePage;
+import TestCases.ContactDetails;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import Utilities.*;
@@ -75,6 +76,27 @@ public class EndToEnd {
 	
 	public static void AddCustomers() throws InterruptedException{
 		Thread.sleep(5000);
-		HomePage.Title(driver).click();
+		ContactDetails.FirstName(driver).click();
+		ContactDetails.FirstName(driver).click();
+		ContactDetails.FirstName(driver).sendKeys("Nishant");
+		System.out.println("First name added");
+		
+		Thread.sleep(5000);
+		ContactDetails.LastName(driver).click();
+		ContactDetails.LastName(driver).click();
+		ContactDetails.LastName(driver).sendKeys("Ranjan");
+		System.out.println("Last name added");
+		
+		Thread.sleep(5000);
+		ContactDetails.PhoneNumber(driver).click();
+		ContactDetails.PhoneNumber(driver).click();
+		ContactDetails.PhoneNumber(driver).sendKeys("1234567890");
+		System.out.println("Phone Number added");
+		
+		Thread.sleep(5000);
+		ContactDetails.Email(driver).click();
+		ContactDetails.Email(driver).click();
+		ContactDetails.Email(driver).sendKeys("a@a.com");
+		System.out.println("Email address added");
 	}
 }
